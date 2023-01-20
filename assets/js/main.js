@@ -7,7 +7,7 @@ var homeSwiper = new Swiper(".home-swiper", {
 	  el: ".swiper-pagination",
 	  clickable: true,
 	},
- });
+});
 
 
 // Change background header
@@ -21,3 +21,17 @@ function scrollHeader() {
 		header.classList.remove("scroll-header");
 }
 window.addEventListener('scroll', scrollHeader);
+
+
+// Initialize New Arrivals Swiper
+var newSwiper = new Swiper(".new-swiper", {
+	spaceBetween: 16,
+	centeredSlides: true,
+	slidesPerView: "auto",
+	loop: "true",
+
+	pagination: {
+		el: ".swiper-pagination",
+		clickable: true,
+	},
+});
