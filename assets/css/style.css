@@ -560,3 +560,29 @@ input {
 	align-items: center;
 	column-gap: 0.5rem;
 }
+
+
+/* Discount section */
+.discount__container {
+	grid-template-columns: repeat(2, max-content);
+	justify-content: center;
+	align-items: center;
+	column-gap: 7rem;
+	background-color: var(--container-color);
+	padding: 3rem 0;
+	border-radius: 3rem;
+}
+
+.discount__img {
+	width: 200px;
+}
+
+.discount__data {
+	padding-left: 6rem;
+	text-align: center;
+}
+
+.discount__title {
+	font-size: var(--h2-font-size);
+	margin-bottom: var(--mb-2);
+}
