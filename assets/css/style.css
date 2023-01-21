@@ -669,3 +669,47 @@ input {
 .new__content:hover .new__button {
 	right: 0;
 }
+
+
+/* Steps */
+.steps__bg {
+	background: var(--container-color);
+	padding: 3.5rem 2.5rem;
+	border-radius: 1rem;
+}
+
+.steps__container {
+	grid-template-columns: repeat(3, 1fr);
+	column-gap: 2rem;
+	padding-top: 1rem;
+}
+
+.steps__card {
+	background-color: var(--body-color);
+	padding: 2.5rem 3rem 2rem 1.5rem;
+	border-radius: 1rem;
+}
+
+.steps__card-number {
+	display: inline-block;
+	background-color: var(--first-color);
+	color: #fff;
+	padding: 0.5rem 0.75rem;
+	border-radius: 0.25rem;
+	font-size: var(--h2-font-size);
+	margin-bottom: var(--mb-1-5);
+	transition: .3s;
+}
+
+.steps__card-title {
+	font-size: var(--normal-font-size);
+	margin-bottom: var(--mb-0-5);
+}
+
+.steps__card-description {
+	font-size: var(--small-font-size);
+}
+
+.steps__card:hover .steps__card-number {
+	transform: translateY(-0.25rem);
+}
