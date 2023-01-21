@@ -713,3 +713,36 @@ input {
 .steps__card:hover .steps__card-number {
 	transform: translateY(-0.25rem);
 }
+
+
+/* Newsletter */
+.newsletter__container {
+	display: grid;
+	grid-template-columns: .5fr;
+	justify-content: center;
+}
+
+.newsletter__description {
+	padding: 0 3rem;
+	text-align: center;
+	margin-bottom: var(--mb-1-5);
+}
+
+.newsletter__form {
+	background-color: var(--container-color);
+	padding: 1rem;
+	display: flex;
+	justify-content: space-between;
+	border-radius: 0.75rem;
+}
+
+.newsletter__input {
+	width: 70%;
+	padding: 0 0.5rem;
+	background: none;
+	color: var(--title-color);
+}
+
+.newsletter__input::placeholder {
+	color: var(--text-color);
+}
