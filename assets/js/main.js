@@ -14,8 +14,8 @@ var homeSwiper = new Swiper(".home-swiper", {
 function scrollHeader() {
 	const header = document.getElementById("header");
 
-	// Когда скролл больше чем 50vh, добавить класс scroll-header в тэг header
-	if (this.scrollY >= 50)
+	// Когда скролл больше чем 15vh, добавить класс scroll-header в тэг header
+	if (this.scrollY >= 15)
 		header.classList.add("scroll-header");
 	else 
 		header.classList.remove("scroll-header");
