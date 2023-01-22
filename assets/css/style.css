@@ -868,3 +868,90 @@ input {
 	background: var(--scroll-thumb-color);
 	border-radius: 0.5rem;
 }
+
+
+/* Breakpoints */
+/* < 1200px */
+@media screen and (max-width: 1200px) {
+	.home__img {
+		height: 400px;
+	}
+}
+
+/* < 992px */
+@media screen and (max-width: 992px) {
+	.container {
+		margin-left: var(--mb-1-5);
+		margin-right: var(--mb-1-5);
+	}
+
+	.section__title {
+		font-size: var(--h2-font-size);
+		margin-bottom: var(--mb-2);
+	}
+
+	.home__content {
+		padding: 8rem 0 2rem;
+	}
+
+	.home__img {
+		height: 300px;
+		transform: translateY(0);
+	}
+
+	.home__indicator {
+		bottom: initial;
+		left: initial;
+		top: 7rem;
+		right: 2rem;
+	}
+
+	.home__indicator::after {
+		top: -3rem;
+		height: 48px;
+	}
+
+	.home__details-img {
+		right: 0.5rem;
+		bottom: initial;
+	}
+
+	.home__description {
+		padding-right: 0;
+	}
+
+	.swiper-pagination {
+		margin-top: var(--mb-2);
+	}
+
+	.discount__container {
+		column-gap: 3rem;
+	}
+
+	.new__content {
+		width: 242px;
+		padding: 2rem 0 1.5rem 0;
+	}
+
+	.new__img {
+		width: 120px;
+	}
+
+	.new__img,
+	.new__subtitle {
+		margin-bottom: var(--mb-0-5);
+	}
+
+	.new__title { 
+		font-size: var(--normal-font-size);
+	}
+
+	.steps__bg {
+		padding: 3rem 2rem 2rem;
+	}
+
+	.steps__container {
+		grid-template-columns: repeat(2, 1fr);
+		row-gap: 2rem;
+	}
+}
