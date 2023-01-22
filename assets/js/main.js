@@ -35,3 +35,23 @@ var newSwiper = new Swiper(".new-swiper", {
 		clickable: true,
 	},
 });
+
+
+// Show Cart
+const cart = document.getElementById('cart');
+const cartShop = document.getElementById('cart-shop');
+const cartClose = document.getElementById('cart-close');
+
+// Показать корзину
+if (cartShop) {
+	cartShop.addEventListener("click", () => {
+		cart.classList.add("show-cart");
+	})
+}
+
+// Спрятать корзину
+if (cartClose) {
+	cartClose.addEventListener("click", () => {
+		cart.classList.remove("show-cart");
+	})
+}
