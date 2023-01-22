@@ -37,6 +37,26 @@ var newSwiper = new Swiper(".new-swiper", {
 });
 
 
+// Show Menu
+const navMenu = document.getElementById('nav-menu');
+const navToggle = document.getElementById('nav-toggle');
+const navClose = document.getElementById('nav-close');
+
+// Показать корзину
+if (navToggle) {
+	navToggle.addEventListener("click", () => {
+		navMenu.classList.add("show-menu");
+	})
+}
+
+// Спрятать корзину
+if (navClose) {
+	navClose.addEventListener("click", () => {
+		navMenu.classList.remove("show-menu");
+	})
+}
+
+
 // Show Cart
 const cart = document.getElementById('cart');
 const cartShop = document.getElementById('cart-shop');
