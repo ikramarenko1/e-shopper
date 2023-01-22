@@ -825,3 +825,46 @@ input {
 	font-size: var(--smaller-font-size);
 	margin-top: 6rem;
 }
+
+
+/* Scroll Up */
+.scrollup {
+	position: fixed;
+	right: 1rem;
+	bottom: -30%;
+	background: var(--first-color);
+	border-radius: 0.4rem;
+	display: inline-flex;
+	padding: 0.25rem;
+	z-index: var(--z-tooltip);
+	opacity: .8;
+	transition: .4s;
+}
+
+.scrollup:hover {
+	opacity: 1;
+}
+
+.scrollup-icon {
+	font-size: 1.5rem;
+	color: #fff;
+}
+
+
+/* Show Scroll Up */
+.show-scroll {
+	bottom: 3rem;
+}
+
+
+/* Scroll Bar */
+::-webkit-scrollbar {
+	width: 0.6rem;
+	background: var(--scroll-bar-color);
+	border-radius: 0.5rem;
+}
+
+::-webkit-scrollbar-thumb {
+	background: var(--scroll-thumb-color);
+	border-radius: 0.5rem;
+}
