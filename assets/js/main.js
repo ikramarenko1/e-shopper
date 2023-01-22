@@ -15,7 +15,7 @@ function scrollHeader() {
 	const header = document.getElementById("header");
 
 	// Когда скролл больше чем 50vh, добавить класс scroll-header в тэг header
-	if (this.scrollY > 50)
+	if (this.scrollY >= 50)
 		header.classList.add("scroll-header");
 	else 
 		header.classList.remove("scroll-header");
@@ -55,3 +55,36 @@ if (cartClose) {
 		cart.classList.remove("show-cart");
 	})
 }
+
+
+// Show Login
+const login = document.getElementById('login');
+const loginButton = document.getElementById('login-toggle');
+const loginClose = document.getElementById('login-close');
+
+// Показать логин форму
+if (loginButton) {
+	loginButton.addEventListener("click", () => {
+		login.classList.add("show-login");
+	})
+}
+
+// Спрятать логин форму
+if (loginClose) {
+	loginClose.addEventListener("click", () => {
+		login.classList.remove("show-login");
+	})
+}
+
+
+// Show Scroll Up
+function scrollUp() {
+	const scrollUp = document.getElementById("scroll-up");
+	
+	// Когда скролл больше чем 350vh, добавить класс show-scroll
+	if (this.scrollY >= 350)
+		scrollUp.classList.add("show-scroll");
+	else 
+		scrollUp.classList.remove("show-scroll");
+}
+window.addEventListener('scroll', scrollUp);
