@@ -1074,6 +1074,28 @@ input {
 }
 
 
+/* ========== FAQ's PAGE ========== */
+.questions__container {
+	grid-template-columns: repeat(2, 1fr);
+	gap: 1.5rem;
+}
+
+.questions__group {
+	display: grid;
+	row-gap: 2rem;
+}
+
+.questions__item {
+	background-color: var(--container-color);
+	border-radius: 0.25rem;
+}
+
+.questions__item-title {
+	font-size: var(--small-font-size);
+	font-weight: var(--font-medium);
+}
+
+
 /* Breakpoints */
 /* < 1200px */
 @media screen and (max-width: 1200px) {
