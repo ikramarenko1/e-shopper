@@ -351,6 +351,11 @@ input {
 	cursor: pointer;
 }
 
+.cart__amount-heart {
+	font-size: 1.15rem;
+	cursor: pointer;
+}
+
 .cart__prices {
 	margin-top: 6rem;
 	display: flex;
