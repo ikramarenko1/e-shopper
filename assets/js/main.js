@@ -4,8 +4,8 @@ var homeSwiper = new Swiper(".home-swiper", {
 	loop: "true",
 
 	pagination: {
-	  el: ".swiper-pagination",
-	  clickable: true,
+		el: ".swiper-pagination",
+		clickable: true,
 	},
 });
 
@@ -17,7 +17,7 @@ function scrollHeader() {
 	// Когда скролл больше чем 15vh, добавить класс scroll-header в тэг header
 	if (this.scrollY >= 15)
 		header.classList.add("scroll-header");
-	else 
+	else
 		header.classList.remove("scroll-header");
 }
 window.addEventListener('scroll', scrollHeader);
@@ -100,11 +100,11 @@ if (loginClose) {
 // Show Scroll Up
 function scrollUp() {
 	const scrollUp = document.getElementById("scroll-up");
-	
+
 	// Когда скролл больше чем 350vh, добавить класс show-scroll
 	if (this.scrollY >= 350)
 		scrollUp.classList.add("show-scroll");
-	else 
+	else
 		scrollUp.classList.remove("show-scroll");
 }
 window.addEventListener('scroll', scrollUp);
