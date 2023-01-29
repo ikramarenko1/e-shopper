@@ -1357,6 +1357,124 @@ input {
 }
 
 
+/* Lightbox Gallery */
+.lightbox {
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgb(0,0,0,.6);
+	display: none;
+	justify-content: center;
+	align-items: center;
+	cursor: zoom-out;
+	padding: 1.8rem;
+	z-index: var(--z-fixed);
+}
+
+.lightbox__img {
+	height: auto;
+	width: auto;
+	max-width: 100%;
+	max-height: 450px;
+	cursor: pointer;
+	background-color: var(--container-color);
+	padding: 0.6rem;
+	display: block;
+}
+
+.lightbox__content {
+	position: relative;
+}
+
+.lightbox__close {
+	position: absolute;
+	height: 40px;
+	width: 40px;
+	top: -2.6rem;
+	right: -2.6rem;
+	font-size: 2rem;
+	color: #fff;
+	line-height: 40px;
+	text-align: center;
+}
+
+.lightbox__caption {
+	position: absolute;
+	left: 0;
+	bottom: -2.2rem;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	font-size: var(--normal-font-size);
+	color: #fff;
+	font-weight: var(--font-medium);
+	z-index: -1;
+}
+
+.lightbox__controls .prev__item,
+.lightbox__controls .next__item {
+	position: absolute;
+	height: 40px;
+	width: 40px;
+	background-color: var(--body-color);
+	color: var(--title-color);
+	border-radius: 50%;
+	text-align: center;
+	cursor: pointer;
+	top: 50%;
+	margin-top: -20px;
+	z-index: 110;
+	transition: all .3s ease;
+}
+
+.lightbox__controls .prev__item:hover,
+.lightbox__controls .next__item:hover {
+	transform: scale(1.1);
+}
+
+.lightbox__controls .prev__item:active,
+.lightbox__controls .next__item:active {
+	transform: scale(1);
+}
+
+.lightbox__controls .prev__item {
+	left: 1.8rem;
+}
+
+.lightbox__controls .next__item {
+	right: 1.8rem;
+}
+
+.lightbox__controls .prev__item .bx,
+.lightbox__controls .next__item .bx {
+	font-size: 2rem;
+	line-height: 40px;
+}
+
+
+/* Lightbox Gallery Open */
+.lightbox.open {
+	display: flex;
+}
+
+
+/* Lightbox Gallery Open Animation */
+.lightbox.open .lightbox__content {
+	animation: lightboxImage .5s	ease;
+}
+
+@keyframes lightboxImage {
+	0% {
+		transform: scale(0.8);
+	}
+	100% {
+		transform: scale(1);
+	}
+}
+
+
 /* Breakpoints */
 /* < 1200px */
 @media screen and (max-width: 1200px) {
