@@ -1397,6 +1397,7 @@ input {
 	color: #fff;
 	line-height: 40px;
 	text-align: center;
+	cursor: pointer;
 }
 
 .lightbox__caption {
