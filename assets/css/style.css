@@ -1368,7 +1368,6 @@ input {
 	display: none;
 	justify-content: center;
 	align-items: center;
-	cursor: zoom-out;
 	padding: 1.8rem;
 	z-index: var(--z-fixed);
 }
