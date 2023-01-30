@@ -1472,6 +1472,7 @@ input {
 	box-shadow: -0.5px 0.5px 4px var(--shadow);
 	border-radius: 0.2rem;
 	transform: translateX(100%);
+	transition: .3s;
 }
 
 .style__switcher .s__icon {

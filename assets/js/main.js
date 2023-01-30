@@ -86,14 +86,14 @@ const loginClose = document.getElementById('login-close');
 if (loginButton) {
 	loginButton.addEventListener("click", () => {
 		login.classList.add("show-login");
-	})
+	});
 }
 
 // Спрятать логин форму
 if (loginClose) {
 	loginClose.addEventListener("click", () => {
 		login.classList.remove("show-login");
-	})
+	});
 }
 
 
@@ -101,7 +101,7 @@ if (loginClose) {
 function scrollUp() {
 	const scrollUp = document.getElementById("scroll-up");
 
-	// Когда скролл больше чем 350vh, добавить класс show-scroll
+	// Когда скролл больше чем 350, добавить класс show-scroll
 	if (this.scrollY >= 350)
 		scrollUp.classList.add("show-scroll");
 	else
@@ -122,7 +122,7 @@ accordionItem.forEach((item) => {
 		toggleItem(item);
 
 		if (openItem && openItem !== item) {
-			toggleItem(openItem)
+			toggleItem(openItem);
 		}
 	})
 })
@@ -141,55 +141,38 @@ const toggleItem = (item) => {
 }
 
 
-// Lightbox Gallery
-const productItems = document.querySelectorAll(".product__img");
-const totalProductItems = productItems.length;
-const lightbox = document.querySelector(".lightbox");
-const lightboxImg = document.querySelector(".lightbox__img");
-const lightboxClose = document.querySelector(".lightbox__close");
-const lightboxCounter = document.querySelector(".caption__counter");
+// Style Switcher
+const styleSwitcher = document.querySelector(".style__switcher");
+const styleSwitcherToggle = document.querySelector(".style__switcher-toggler");
 
-let itemIndex = 0;
+styleSwitcherToggle.addEventListener("click", () => {
+	styleSwitcher.classList.toggle("open");
+});
 
-for (let i = 0; i < totalProductItems; i++) {
-	productItems[i].addEventListener("click", () => {
-		itemIndex = i;
+// Hide Style Switcher On Scroll
+window.addEventListener("scroll", () => {
+	if (styleSwitcher.classList.contains("open"))
+		styleSwitcher.classList.remove("open");
+});
 
-		changeItem();
-		toggleLightbox();
+// Theme Colors
+function themeColors() {
+	const colorStyle = document.querySelector(".js-color-style");
+	const themeColorsContainer = document.querySelector(".js-theme-colors");
+
+	themeColorsContainer.addEventListener("click", ({target}) => { // target - объект по которому мы кликаем
+		if (target.classList.contains("js-theme-color-item")) { // Вытягиваем только те target'ы, у которых есть класс js-theme-color-item
+			localStorage.setItem("color", target.getAttribute("data-js-theme-color")); // Вытягиваем инфо с аттрибута data-js-theme-color и кладем в локальное хранилище
+			setColors();
+		}
 	})
-}
 
-function prevItem() {
-	if (itemIndex === 0) 
-		itemIndex = totalProductItems - 1;
-	else 
-		itemIndex--;
+	function setColors() {
+		let path = colorStyle.getAttribute("href").split("/"); // Достаём путь к css файлу и режем его на части между знаками /
+		path = path.slice(0, path.length - 1); // Обрезаем часть с названием файла
 
-	changeItem();
-}
-
-function nextItem() {
-	if (itemIndex === totalProductItems - 1) 
-		itemIndex = 0;
-	else 
-		itemIndex++;
-
-	changeItem();
-}
-
-function toggleLightbox() {
-	lightbox.classList.toggle("open");
-}
-
-function changeItem() {
-	imgSrc = productItems[itemIndex].querySelector(".product__img img").getAttribute("src"); // Get clicked img's source
-	lightboxImg.src = imgSrc; // Change present lightboxImg source with clicked img's source
-	lightboxCounter.innerHTML = `${itemIndex + 1} of ${totalProductItems}`; // Rewrite lightbox counter
-}
-
-lightbox.addEventListener("click", () => {
-	if(event.target === lightboxClose || event.target === lightbox) {
-		toggleLightbox();
+		colorStyle.setAttribute("href", path.join("/") + "/" + localStorage.getItem("color") + ".css"); // Обновляем аттрибут href значение path, которое мы склеиваем символом /, добавляем символ / в конце, потом вытягиваем с локального хранилища переменную и дописываем .css
 	}
-})
+}
+
+themeColors();
