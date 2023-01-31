@@ -1083,6 +1083,12 @@ input {
 	text-align: right;
 }
 
+.read__more a {
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+}
+
 
 /* ========== FAQ's PAGE ========== */
 .questions__container {
