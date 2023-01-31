@@ -1460,7 +1460,7 @@ input {
 }
 
 
-/* Style Switcher */
+/* Theme Switcher */
 .style__switcher {
 	position: fixed;
 	right: 0;
@@ -1544,7 +1544,7 @@ input {
 }
 
 
-/* Style Switcher Open */
+/* Theme Switcher Open */
 .style__switcher.open {
 	transform: translateX(-10px);
 }
