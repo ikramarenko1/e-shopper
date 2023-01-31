@@ -18,18 +18,18 @@ for (let i = 0; i < totalProductItems; i++) {
 }
 
 function prevItem() {
-	if (itemIndex === 0) 
+	if (itemIndex === 0)
 		itemIndex = totalProductItems - 1;
-	else 
+	else
 		itemIndex--;
 
 	changeItem();
 }
 
 function nextItem() {
-	if (itemIndex === totalProductItems - 1) 
+	if (itemIndex === totalProductItems - 1)
 		itemIndex = 0;
-	else 
+	else
 		itemIndex++;
 
 	changeItem();
@@ -46,7 +46,7 @@ function changeItem() {
 }
 
 lightbox.addEventListener("click", () => {
-	if(event.target === lightboxClose || event.target === lightbox) {
+	if (event.target === lightboxClose || event.target === lightbox) {
 		toggleLightbox();
 	}
 })

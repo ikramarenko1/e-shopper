@@ -951,7 +951,8 @@ input {
 }
 
 .filter p {
-	flex: 1; /* ! Чтобы растянуть и прижать кол-во к правому краю */
+	flex: 1;
+	/* ! Чтобы растянуть и прижать кол-во к правому краю */
 }
 
 .filter input {
@@ -970,7 +971,8 @@ input {
 	padding: 2rem 0;
 	border-radius: 1rem;
 	text-align: center;
-	overflow: hidden; /* ! Чтобы спрятать кнопку, когда она не находится в блоке */
+	overflow: hidden;
+	/* ! Чтобы спрятать кнопку, когда она не находится в блоке */
 }
 
 .shop__img {
@@ -1219,7 +1221,7 @@ input {
 	column-gap: 7rem;
 }
 
-.about__img { 
+.about__img {
 	width: 380px;
 	justify-self: center;
 }
@@ -1323,7 +1325,7 @@ input {
 	margin-bottom: var(--mb-1-5);
 }
 
-.details__price { 
+.details__price {
 	font-weight: var(--font-medium);
 	color: var(--title-color);
 	font-size: var(--h3-font-size);
@@ -1364,7 +1366,7 @@ input {
 	top: 0;
 	width: 100%;
 	height: 100%;
-	background-color: rgb(0,0,0,.6);
+	background-color: rgb(0, 0, 0, .6);
 	display: none;
 	justify-content: center;
 	align-items: center;
@@ -1513,7 +1515,7 @@ input {
 	vertical-align: middle;
 }
 
-.style__switcher .theme__colors button i { 
+.style__switcher .theme__colors button i {
 	color: #fff;
 	font-size: 1.2rem;
 	position: absolute;
@@ -1558,13 +1560,14 @@ input {
 
 /* Lightbox Gallery Open Animation */
 .lightbox.open .lightbox__content {
-	animation: lightboxImage .5s	ease;
+	animation: lightboxImage .5s ease;
 }
 
 @keyframes lightboxImage {
 	0% {
 		transform: scale(0.8);
 	}
+
 	100% {
 		transform: scale(1);
 	}

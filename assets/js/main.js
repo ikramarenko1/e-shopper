@@ -160,7 +160,7 @@ function themeColors() {
 	const colorStyle = document.querySelector(".js-color-style");
 	const themeColorsContainer = document.querySelector(".js-theme-colors");
 
-	themeColorsContainer.addEventListener("click", ({target}) => { // target - объект по которому мы кликаем
+	themeColorsContainer.addEventListener("click", ({ target }) => { // target - объект по которому мы кликаем
 		if (target.classList.contains("js-theme-color-item")) { // Вытягиваем только те target'ы, у которых есть класс js-theme-color-item
 			localStorage.setItem("color", target.getAttribute("data-js-theme-color")); // Вытягиваем инфо с аттрибута data-js-theme-color и кладем в локальное хранилище
 			setColors();
