@@ -14,7 +14,7 @@ var homeSwiper = new Swiper(".home-swiper", {
 function scrollHeader() {
 	const header = document.getElementById("header");
 
-	// Когда скролл больше чем 15vh, добавить класс scroll-header в тэг header
+	// Когда скролл больше чем 15, добавить класс scroll-header в тэг header
 	if (this.scrollY >= 15)
 		header.classList.add("scroll-header");
 	else
@@ -111,10 +111,10 @@ window.addEventListener('scroll', scrollUp);
 
 
 // Questions Accordion
-const accordionItem = document.querySelectorAll(".questions__item");
+const accordionItem = document.querySelectorAll(".questions__item"); // Вытягиваем все элементы аккордеона
 
-accordionItem.forEach((item) => {
-	const accordionHeader = item.querySelector(".questions__header");
+accordionItem.forEach((item) => { // Для каждого элемента, который мы нашли
+	const accordionHeader = item.querySelector(".questions__header"); // Вытягиваем header каждого элемента
 
 	accordionHeader.addEventListener("click", () => {
 		const openItem = document.querySelector(".accordion-open");
@@ -131,9 +131,9 @@ const toggleItem = (item) => {
 	const accordionContent = item.querySelector('.questions__content');
 	const accordionIcon = item.querySelector(".questions__icon");
 
-	if (item.classList.contains("accordion-open")) {
-		accordionContent.removeAttribute("style");
-		item.classList.remove("accordion-open");
+	if (item.classList.contains("accordion-open")) { // Если у item уже есть класс accordion-open
+		accordionContent.removeAttribute("style"); // Чистим аттрибут style, для того, чтобы у него убралась высота
+		item.classList.remove("accordion-open"); // Убираем класс accordion-open
 	} else {
 		accordionContent.style.height = accordionContent.scrollHeight + "px";
 		item.classList.add("accordion-open");
@@ -141,7 +141,7 @@ const toggleItem = (item) => {
 }
 
 
-// Style Switcher
+// Theme Switcher
 const styleSwitcher = document.querySelector(".style__switcher");
 const styleSwitcherToggle = document.querySelector(".style__switcher-toggler");
 
