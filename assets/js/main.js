@@ -168,10 +168,22 @@ function themeColors() {
 	})
 
 	function setColors() {
-		let path = colorStyle.getAttribute("href").split("/"); // Достаём путь к css файлу и режем его на части между знаками /
+		let path = colorStyle.getAttribute("href").split("/"); // Достаём путь к css файлу и режем его на части между знаками "/"
 		path = path.slice(0, path.length - 1); // Обрезаем часть с названием файла
 
-		colorStyle.setAttribute("href", path.join("/") + "/" + localStorage.getItem("color") + ".css"); // Обновляем аттрибут href значение path, которое мы склеиваем символом /, добавляем символ / в конце, потом вытягиваем с локального хранилища переменную и дописываем .css
+		colorStyle.setAttribute("href", path.join("/") + "/" + localStorage.getItem("color") + ".css"); // Обновляем аттрибут href значением path, которое мы склеиваем символом /, добавляем символ / в конце, потом вытягиваем с локального хранилища переменную и дописываем .css
+
+		if (document.querySelector(".js-theme-color-item.active")) { // Убрать класс active у элемента с этим классом
+			document.querySelector(".js-theme-color-item.active").classList.remove("active");
+		}
+		document.querySelector("[data-js-theme-color=" + localStorage.getItem("color") + "]").classList.add("active"); // Присвоить класс active элементу с аттрибутом data-js-theme-color с цветом, который вытягиваем с локального хранилищв
+	}
+
+	if (localStorage.getItem("color") !== null) { // Сохранять выбранный цвет при обновлении страницы
+		setColors();
+	} else {
+		const defaultColor = colorStyle.getAttribute("href").split("/").pop().split(".").shift();
+		document.querySelector("[data-js-theme-color=" + defaultColor + "]").classList.add("active");
 	}
 }
 
