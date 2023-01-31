@@ -935,6 +935,13 @@ input {
 .filter__title {
 	font-size: var(--h3-font-size);
 	text-transform: uppercase;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.filter__title i {
+	display: none;
 }
 
 .filter__subtitle {
@@ -1828,6 +1835,17 @@ input {
 
 	.pagination {
 		justify-content: center;
+	}
+
+	.filter__title i {
+		display: block;
+		transition: .3s;
+	}
+
+	.filter__choices { 
+		overflow: hidden;
+		height: 0;
+		transition: .4s;
 	}
 
 	/* ========== BLOG PAGE ========== */

@@ -128,7 +128,7 @@ accordionItem.forEach((item) => { // Для каждого элемента, к�
 })
 
 const toggleItem = (item) => {
-	const accordionContent = item.querySelector('.questions__content');
+	const accordionContent = item.querySelector(".questions__content");
 	const accordionIcon = item.querySelector(".questions__icon");
 
 	if (item.classList.contains("accordion-open")) { // Если у item уже есть класс accordion-open
@@ -139,6 +139,24 @@ const toggleItem = (item) => {
 		item.classList.add("accordion-open");
 	}
 }
+
+
+// Filters Accordion
+const filterAccordionContent = document.querySelector(".filter__choices");
+const filterAccordionHeader = document.querySelector(".filter__title");
+const filterAccordionIcon = document.querySelector(".filter__title i")
+
+filterAccordionHeader.addEventListener("click", () => {
+	if (filterAccordionContent.classList.contains("accordion-open")) {
+		filterAccordionContent.removeAttribute("style");
+		filterAccordionContent.classList.remove("accordion-open");
+		filterAccordionIcon.style.transform = "rotate(0)";
+	} else {
+		filterAccordionContent.style.height = filterAccordionContent.scrollHeight + "px";
+		filterAccordionContent.classList.add("accordion-open");
+		filterAccordionIcon.style.transform = "rotate(45deg)";
+	}
+})
 
 
 // Theme Switcher
