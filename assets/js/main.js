@@ -144,19 +144,22 @@ const toggleItem = (item) => {
 // Filters Accordion
 const filterAccordionContent = document.querySelector(".filter__choices");
 const filterAccordionHeader = document.querySelector(".filter__title");
-const filterAccordionIcon = document.querySelector(".filter__title i")
+const filterAccordionIcon = document.querySelector(".filter__title i");
 
-filterAccordionHeader.addEventListener("click", () => {
-	if (filterAccordionContent.classList.contains("accordion-open")) {
-		filterAccordionContent.removeAttribute("style");
-		filterAccordionContent.classList.remove("accordion-open");
-		filterAccordionIcon.style.transform = "rotate(0)";
-	} else {
-		filterAccordionContent.style.height = filterAccordionContent.scrollHeight + "px";
-		filterAccordionContent.classList.add("accordion-open");
-		filterAccordionIcon.style.transform = "rotate(45deg)";
-	}
-})
+// Если на странице есть .filter__title и ширина экрана не больше 767px, то выполняется код. Этой проверкой мы избегаем ошибки при попытке повесить действие клик на несуществующий элемент на странице
+if (filterAccordionHeader && window.matchMedia("(max-width: 767px)").matches) {
+	
+	filterAccordionHeader.addEventListener("click", () => {
+		if (filterAccordionContent.hasAttribute("style")) {
+			filterAccordionContent.removeAttribute("style");
+			filterAccordionIcon.style.transform = "rotate(0)";
+		} else {
+			filterAccordionContent.style.height = filterAccordionContent.scrollHeight + "px";
+			filterAccordionIcon.style.transform = "rotate(45deg)";
+		}
+	})
+	
+}
 
 
 // Theme Switcher
@@ -167,7 +170,7 @@ styleSwitcherToggle.addEventListener("click", () => {
 	styleSwitcher.classList.toggle("open");
 });
 
-// Hide Style Switcher On Scroll
+// Hide Theme Switcher On Scroll
 window.addEventListener("scroll", () => {
 	if (styleSwitcher.classList.contains("open"))
 		styleSwitcher.classList.remove("open");
