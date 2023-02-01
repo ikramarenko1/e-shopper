@@ -1,14 +1,16 @@
 # e-shopper website
 
 ## Beautiful and practical responsive website for an online store
-This is a multi-page site with various interesting features. <strong>You can view the site by clicking on [this link](https://ikramarenko1.github.io/e-shopper/)</strong>. You can also see the features that beginners can take from this project under the preview.
+This is a multi-page site with various interesting features.  
+**You can view the site by clicking on [this link](https://ikramarenko1.github.io/e-shopper/).**    
+You can also see the features that beginners can take from this project under the preview.
 
-<hr>
+___
 
 ### Preview:
 ![preview img](/preview.jpeg)
 
-<hr>
+___
 
 ### Features:
 
