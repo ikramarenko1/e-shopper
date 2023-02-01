@@ -957,7 +957,12 @@ input {
 	font-size: var(--small-font-size);
 }
 
-.filter p {
+.filter label {
+	display: flex;
+	width: 100%;
+}
+
+.filter label p {
 	flex: 1;
 	/* ! Чтобы растянуть и прижать кол-во к правому краю */
 }
